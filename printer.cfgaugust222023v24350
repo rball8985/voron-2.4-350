@@ -1,3 +1,8 @@
+#[include ercf_hardware.cfg]
+#[include ercf_parameters.cfg]
+#[include ercf_software.cfg]
+#[include client_macros.cfg]
+#[include ercf_menu.cfg]
 [include shell_command.cfg]
 [include mainsail.cfg]
 [virtual_sdcard]
@@ -5,10 +10,10 @@ path: /home/pi/printer_data/gcodes
 # Mainsail settings
 [exclude_object]
 [include mainsail.cfg]
-#[include lcd_tweaks.cfg]
-[include KAMP/Voron_Purge.cfg]
+[include LCD_tweaks.cfg]
+#[include KAMP/Voron_Purge.cfg]
 [include KAMP/*cfg]
-#[include pis.cfg]
+[include pis.cfg]
 #[include can0.cfg]
 #[include adxl.cfg]  ## old school input shaper ##
 [include nozzle_scrub.cfg]
@@ -676,27 +681,27 @@ gcode:
     RUN_SHELL_COMMAND CMD=update_git_script
 
 [gcode_shell_command update_git_script]
-command: bash /home/pi/klipper-backup/script.sh
+command: bash /home/pi/printer_data/config/
 timeout: 90.0
 verbose: True
+
 #*# <---------------------- SAVE_CONFIG ---------------------->
 #*# DO NOT EDIT THIS BLOCK OR BELOW. The contents are auto-generated.
 #*#
 #*# [heater_bed]
 #*# control = pid
-#*# pid_kp = 39.529
-#*# pid_ki = 1.243
-#*# pid_kd = 314.259
+#*# pid_kp = 39.842
+#*# pid_ki = 1.265
+#*# pid_kd = 313.754
 #*#
 #*# [extruder]
 #*# control = pid
-#*# pid_kp = 24.641
-#*# pid_ki = 1.358
-#*# pid_kd = 111.806
+#*# pid_kp = 23.693
+#*# pid_ki = 0.987
+#*# pid_kd = 142.161
 #*#
 #*# [stepper_z]
 #*# position_endstop = -0.960
 #*#
 #*# [probe]
 #*# z_offset = 1.980
-
